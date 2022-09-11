@@ -1,9 +1,7 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\ContactoController;
+use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\TestController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,6 +16,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
-Route::get('/contacto', [ContactoController::class, 'index'])->name('contacto');
-Route::get('/about', [AboutController::class, 'index'])->name('about');
-Route::get('/test', [TestController::class, 'index'])->name('test');
+Route::resource('post', PostController::class);
